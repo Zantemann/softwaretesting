@@ -10,7 +10,7 @@
     "softwaretesting": "file:"
   },
   "devDependencies": {
-    "chai": "^5.1.2",
+    "chai": "^4.2.0",
     "mocha": "^10.8.2"
   }
 }
