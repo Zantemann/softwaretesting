@@ -1,7 +1,7 @@
 import { assert } from "chai";
 
-describe("Pipeline Test", function () {
-  it("should pass this placeholder test", function () {
+describe("Pipeline Test", () => {
+  it("should pass this placeholder test", () => {
     assert.isTrue(true);
   });
 });
