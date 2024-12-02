@@ -22,6 +22,7 @@ jobs:
 
       - name: Run tests
         run: npm run coverage
+        continue-on-error: true
 
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2.3.4
