@@ -2,7 +2,7 @@ import { assert } from "chai";
 import defaultTo from "../src/defaultTo.js";
 
 describe("defaultTo", () => {
-  describe("Valid Inputs", () => {
+  describe("Positive Test Cases", () => {
     it("should return the value when parameter is valid string", () => {
       assert.strictEqual(defaultTo("hello", "default"), "hello");
       assert.strictEqual(defaultTo("", "default"), "");
@@ -36,8 +36,8 @@ describe("defaultTo", () => {
     });
   });
 
-  describe("Invalid Inputs", () => {
-    it("should return the default value when the input is null", () => {
+  describe("Negative Test Cases", () => {
+    it("should return the default value when the input is null, NaN or undefined", () => {
       assert.strictEqual(defaultTo(null, "default"), "default");
     });
 

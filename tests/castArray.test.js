@@ -2,7 +2,7 @@ import { assert } from "chai";
 import castArray from "../src/castArray.js";
 
 describe("castArray", () => {
-  describe("Valid Inputs", () => {
+  describe("Positive Test Cases", () => {
     it("should return the same array if input is already an array", () => {
       const array = [1, 2, 3];
       assert.strictEqual(castArray(array), array);
@@ -11,12 +11,15 @@ describe("castArray", () => {
 
     it("should wrap a non-array value in an array", () => {
       assert.deepEqual(castArray(1), [1]);
+      assert.deepEqual(castArray(true), [true]);
       assert.deepEqual(castArray("string"), ["string"]);
+      assert.deepEqual(castArray(""), [""]);
       assert.deepEqual(castArray({ a: 1 }), [{ a: 1 }]);
+      assert.deepEqual(castArray({}), [{}]);
     });
   });
 
-  describe("Invalid Inputs", () => {
+  describe("Negative Test Cases", () => {
     it("should return an empty array when no arguments are provided", () => {
       assert.deepEqual(castArray(), []);
     });

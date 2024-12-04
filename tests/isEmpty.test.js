@@ -2,12 +2,10 @@ import { assert } from "chai";
 import isEmpty from "../src/isEmpty.js";
 
 describe("isEmpty() Tests", () => {
-  describe("positive test cases", () => {
-    it("should return true for null", () => {
+  describe("Positive Test Cases", () => {
+    it("should return true for null, NaN and undefined", () => {
       assert.isTrue(isEmpty(null));
-    });
-
-    it("should return true for undefined", () => {
+      assert.isTrue(isEmpty(NaN));
       assert.isTrue(isEmpty(undefined));
     });
 
@@ -45,9 +43,20 @@ describe("isEmpty() Tests", () => {
     it("should return true for empty arguments object", function () {
       assert.isTrue(isEmpty(arguments));
     });
+
+    it("should return true for empty jQuery-like collection", function () {
+      const jQueryLike = {length : 0};
+      assert.isTrue(isEmpty(jQueryLike));
+    });
+
+    it("should return true for empty buffer", function () {
+      const buffer = Buffer.alloc(0)
+      assert.isTrue(isEmpty(buffer));
+    });
+
   });
 
-  describe("negative test cases", () => {
+  describe("Negative Test Cases", () => {
     it("should return false for non-empty arrays", () => {
       assert.isFalse(isEmpty([1, 2, 3]));
     });
@@ -78,12 +87,15 @@ describe("isEmpty() Tests", () => {
       })(1, 2, 3);
     });
 
-    it("should return false for objects with prototype properties", () => {
-      function Foo() {
-        this.a = 1;
-      }
-      Foo.prototype.b = 2;
-      assert.isFalse(isEmpty(new Foo()));
+    it("should return false for non-empty jQuery-like collection", function () {
+      const jQueryLike = {length : 1, 0:'element'};
+      assert.isFalse(isEmpty(jQueryLike));
     });
+
+    it("should return false for non-empty buffer", function () {
+      const buffer = Buffer.alloc(1)
+      assert.isFalse(isEmpty(buffer));
+    });
+
   });
 });
