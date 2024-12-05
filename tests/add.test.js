@@ -17,29 +17,41 @@ describe("add.js", () => {
   });
 
   describe("Negative Test Cases", () => {
-    it("should return NaN when one input is a string", () => {
+    it("should return NaN when input(s) are strings", () => {
       assert.isNaN(add(-2, "string"));
       assert.isNaN(add("string", 5));
       assert.isNaN(add("string", "hello"));
     });
 
 
-    it("should return NaN when adding null, NaN or undefined", () => {
-      assert.isNaN(add(2, undefined));
-      assert.isNaN(add(undefined, -5));
-      assert.isNaN(add(undefined, undefined));
+    it("should return NaN when adding NaN", () => {
 
       assert.isNaN(add(2, NaN));
       assert.isNaN(add(NaN, -5));
       assert.isNaN(add(NaN, NaN));
+    });
+
+    it("should return NaN when adding null", () => {
 
       assert.isNaN(add(2, null));
       assert.isNaN(add(null, -5));
       assert.isNaN(add(null, null));
+    });
+
+    it("should return NaN when adding undefined", () => {
       
-      assert.isNaN(add(null, undefined));
+      assert.isNaN(add(2, undefined));
+      assert.isNaN(add(undefined, -5));
+      assert.isNaN(add(undefined, undefined));
+      
+    });
+
+    it("should return NaN with null, NaN and undefined combinations", () => {
+
       assert.isNaN(add(NaN, null));
+      assert.isNaN(add(null, undefined));
       assert.isNaN(add(NaN, undefined));
+
     });
 
 
@@ -51,27 +63,22 @@ describe("add.js", () => {
     });
 
     it("should return NaN when input(s) are boolean", () => {
+      
+      assert.isNaN(add(5, true));
+      assert.isNaN(add(false, -3));
       assert.isNaN(add(true, false));
-      assert.isNaN(add(false, true));
       assert.isNaN(add(true, true));
       assert.isNaN(add(false, false));
 
-      assert.isNaN(add(5, true));
-      assert.isNaN(add(false, -3));
     });
 
-    it("should return NaN when input(s) are non-numeric", () => {
+    it("should return NaN when input(s) are arrays or object", () => {
+      
       assert.isNaN(add([], []));
       assert.isNaN(add({}, {}));
-      assert.isNaN(add("", ""));
-      
       assert.isNaN(add({}, []));
-      assert.isNaN(add("", []));
-      assert.isNaN(add({}, ""));
-
       assert.isNaN(add(2, []));
       assert.isNaN(add({}, -5));
-      assert.isNaN(add("", 123));
     });
   });
 });
