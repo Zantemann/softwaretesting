@@ -23,7 +23,8 @@
       "text"
     ],
     "exclude": [
-      "tests"
+      "tests",
+      "src/.internal"
     ]
   },
   "dependencies": {
