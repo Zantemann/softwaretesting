@@ -3,7 +3,6 @@ import toString from "../src/toString.js";
 
 describe("toString() Tests", () => {
   describe("Positive Test Cases", () => {
-  
     it("should return the same string if input is a string", () => {
       assert.equal(toString("test"), "test");
       assert.equal(toString(""), "");
@@ -37,7 +36,6 @@ describe("toString() Tests", () => {
   });
 
   describe("Negative Test Cases", () => {
-
     it("should convert null, NaN and undefined to an empty string", () => {
       assert.equal(toString(null), "");
       assert.equal(toString(NaN), "");
@@ -54,6 +52,5 @@ describe("toString() Tests", () => {
       assert.equal(toString(1 / 0), "NaN");
       assert.equal(toString(-1 / 0), "NaN");
     });
-
   });
 });

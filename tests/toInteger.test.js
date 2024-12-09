@@ -37,7 +37,6 @@ describe("toInteger() Tests", () => {
   });
 
   describe("Negative Test Cases", () => {
-
     it("should return 0 for null, NaN or undefined", () => {
       assert.strictEqual(toInteger(null), 0);
       assert.strictEqual(toInteger(NaN), 0);
@@ -45,12 +44,12 @@ describe("toInteger() Tests", () => {
     });
 
     it("should return 0 for non-numeric strings", () => {
-      assert.strictEqual(toInteger("abc"), 0);  
+      assert.strictEqual(toInteger("abc"), 0);
       assert.strictEqual(toInteger(""), 0);
     });
 
     it("should return 0 for objects", () => {
-      assert.strictEqual(toInteger({a: 1}), 0);
+      assert.strictEqual(toInteger({ a: 1 }), 0);
       assert.strictEqual(toInteger({}), 0); //?
     });
 
@@ -60,7 +59,10 @@ describe("toInteger() Tests", () => {
     });
 
     it("should return 0 for functions", () => {
-      assert.strictEqual(toInteger(() => {}),0);
+      assert.strictEqual(
+        toInteger(() => {}),
+        0
+      );
     });
 
     it("should return 0 for symbols", () => {

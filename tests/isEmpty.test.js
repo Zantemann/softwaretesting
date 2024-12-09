@@ -45,15 +45,14 @@ describe("isEmpty() Tests", () => {
     });
 
     it("should return true for empty jQuery-like collection", function () {
-      const jQueryLike = {length : 0};
+      const jQueryLike = { length: 0 };
       assert.isTrue(isEmpty(jQueryLike));
     });
 
     it("should return true for empty buffer", function () {
-      const buffer = Buffer.alloc(0)
+      const buffer = Buffer.alloc(0);
       assert.isTrue(isEmpty(buffer));
     });
-
   });
 
   describe("Negative Test Cases", () => {
@@ -88,14 +87,13 @@ describe("isEmpty() Tests", () => {
     });
 
     it("should return false for non-empty jQuery-like collection", function () {
-      const jQueryLike = {length : 1, 0:'element'};
+      const jQueryLike = { length: 1, 0: "element" };
       assert.isFalse(isEmpty(jQueryLike));
     });
 
     it("should return false for non-empty buffer", function () {
-      const buffer = Buffer.alloc(1)
+      const buffer = Buffer.alloc(1);
       assert.isFalse(isEmpty(buffer));
     });
-
   });
 });

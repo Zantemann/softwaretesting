@@ -21,7 +21,7 @@ describe("get() Tests", () => {
 
     it("should return the entire object if path is empty", () => {
       const object = { a: [{ b: { c: 3 } }] };
-      assert.deepEqual(get(object,""), object)
+      assert.deepEqual(get(object, ""), object);
     });
 
     it("should return the value at the specified path of a string", () => {
@@ -48,13 +48,13 @@ describe("get() Tests", () => {
 
     it("should return undefined if the object is null, NaN or undefined", () => {
       assert.strictEqual(get(null, "a.b.c"), undefined);
-      assert.strictEqual(get(undefined, "a.b.c"), undefined);  
+      assert.strictEqual(get(undefined, "a.b.c"), undefined);
       assert.strictEqual(get(NaN, "a.b.c"), undefined);
     });
 
     it("should return the default value if the object is null, NaN or undefined with a default value", () => {
       assert.strictEqual(get(null, "a.b.c", "default"), "default");
-      assert.strictEqual(get(undefined, "a.b.c", "default"), "default");  
+      assert.strictEqual(get(undefined, "a.b.c", "default"), "default");
       assert.strictEqual(get(NaN, "a.b.c", "default"), "default");
     });
 

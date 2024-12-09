@@ -65,6 +65,5 @@ describe("keys() Tests", () => {
       function emptyFunc() {}
       assert.deepEqual(keys(emptyFunc), []);
     });
-
   });
 });

@@ -9,7 +9,7 @@ describe("eq", () => {
     });
 
     it("should return true for identical array references", () => {
-      const arr = [1,2,3];
+      const arr = [1, 2, 3];
       assert.isTrue(eq(arr, arr));
     });
 
@@ -34,7 +34,6 @@ describe("eq", () => {
       assert.isTrue(eq(NaN, NaN));
       assert.isTrue(eq(undefined, undefined));
     });
-
   });
 
   describe("Negative Test Cases", () => {
@@ -45,8 +44,8 @@ describe("eq", () => {
     });
 
     it("should return false for identical array references", () => {
-      const arr1= [1,2,3,4];
-      const arr2= [1,2,3,4];
+      const arr1 = [1, 2, 3, 4];
+      const arr2 = [1, 2, 3, 4];
       assert.isFalse(eq(arr1, arr2));
     });
 
