@@ -72,13 +72,18 @@ describe("add.js", () => {
 
     });
 
-    it("should return NaN when input(s) are arrays or object", () => {
+    it("should return NaN when input(s) are arrays or objects", () => {
       
+      assert.isNaN(add([2],[-5]))
+      assert.isNaN(add({a:2}, {a:-5}));
+      assert.isNaN(add({a:2},[-5]))
+
       assert.isNaN(add([], []));
       assert.isNaN(add({}, {}));
       assert.isNaN(add({}, []));
       assert.isNaN(add(2, []));
       assert.isNaN(add({}, -5));
     });
+
   });
 });

@@ -37,7 +37,7 @@ describe("defaultTo", () => {
   });
 
   describe("Negative Test Cases", () => {
-    it("should return the default value when the input is null, NaN or undefined", () => {
+    it("should return the default value when the input is null", () => {
       assert.strictEqual(defaultTo(null, "default"), "default");
     });
 
