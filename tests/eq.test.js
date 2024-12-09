@@ -64,9 +64,10 @@ describe("eq", () => {
       assert.isFalse(eq(1, "1"));
     });
 
-    it("should return false for different boolean values", () => {
+    it("should return false for different boolean values/representations", () => {
       assert.isFalse(eq(true, false));
       assert.isFalse(eq(true, 1));
+      assert.isFalse(eq(false, 0));
     });
 
     it("should return false for mixed null, undefined and NaN comparisons", () => {

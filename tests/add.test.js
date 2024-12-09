@@ -7,13 +7,20 @@ describe("add.js", () => {
       assert.equal(add(2, 3), 5);
       assert.equal(add(2, -3), -1);
       assert.equal(add(-2, -3), -5);
+
+      assert.equal(add(2.7, 5.5), 8.2);
+      assert.equal(add(2.7, -5.5), -2.8);
+      assert.equal(add(-2.7, -5.5), -8.2);
+
+      assert.equal(add(2.7, 5), 7.7);
     });
 
     it("should add zero to a number succesfully", () => {
       assert.equal(add(0, 5), 5);
-      assert.equal(add(-10, 0), -10);
+      assert.equal(add(-10.5, 0), -10.5);
       assert.equal(add(0, 0), 0);
     });
+
   });
 
   describe("Negative Test Cases", () => {
