@@ -72,17 +72,24 @@ describe("add.js", () => {
 
     });
 
-    it("should return NaN when input(s) are arrays or objects", () => {
+    it("should return NaN when input(s) are empty arrays or objects", () => {
       
-      assert.isNaN(add([2],[-5]))
-      assert.isNaN(add({a:2}, {a:-5}));
-      assert.isNaN(add({a:2},[-5]))
-
       assert.isNaN(add([], []));
       assert.isNaN(add({}, {}));
       assert.isNaN(add({}, []));
       assert.isNaN(add(2, []));
       assert.isNaN(add({}, -5));
+    });
+
+    it("should return NaN when input(s) are non-empty arrays or objects", () => {
+
+      assert.isNaN(add([2],[-5]))
+      assert.isNaN(add([1,2],[-5]))
+      assert.isNaN(add({a:2}, {a:-5}));
+      assert.isNaN(add({a:1, b:2}, {a:-5}));
+      assert.isNaN(add({a:2},[-5]))
+      assert.isNaN(add(2,[-5]))
+      assert.isNaN(add({a:2}, -5));
     });
 
   });
