@@ -19,7 +19,9 @@ describe("eq", () => {
     });
 
     it("should return true for identical numbers", () => {
-      assert.isTrue(eq(1, 1));
+      assert.isTrue(eq(0, 0));
+      assert.isTrue(eq(-1, -1));
+      assert.isTrue(eq(2.7, 2.7));
     });
 
     it("should return true for identical boolean values", () => {

@@ -12,6 +12,7 @@ describe("defaultTo", () => {
       assert.strictEqual(defaultTo(1, 10), 1);
       assert.strictEqual(defaultTo(0, 10), 0);
       assert.strictEqual(defaultTo(-5, 10), -5);
+      assert.strictEqual(defaultTo(2.7, 10), 2.7);
     });
 
     it("should return the value when parameter is valid array", () => {
